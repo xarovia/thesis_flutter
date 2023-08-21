@@ -24,7 +24,20 @@ class BottomNavBar extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [Icon(FontAwesomeIcons.house), Text("Department")],
+                children: [
+                  Icon(
+                    FontAwesomeIcons.house,
+                    color: Colors.white,
+                    size: 20,
+                  ),
+                  Text(
+                    "Depart",
+                    style: TextStyle(
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFFFFFFFF)),
+                  )
+                ],
               ),
             ),
             GestureDetector(
@@ -33,7 +46,20 @@ class BottomNavBar extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [Icon(FontAwesomeIcons.house), Text("Department")],
+                children: [
+                  Icon(
+                    FontAwesomeIcons.book,
+                    color: Colors.white,
+                    size: 20,
+                  ),
+                  Text(
+                    "Subjects",
+                    style: TextStyle(
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFFFFFFFF)),
+                  )
+                ],
               ),
             ),
             GestureDetector(
@@ -42,7 +68,20 @@ class BottomNavBar extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [Icon(FontAwesomeIcons.house), Text("Department")],
+                children: [
+                  Icon(
+                    FontAwesomeIcons.folderPlus,
+                    color: Colors.white,
+                    size: 20,
+                  ),
+                  Text(
+                    "Class",
+                    style: TextStyle(
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFFFFFFFF)),
+                  )
+                ],
               ),
             ),
             GestureDetector(
@@ -51,7 +90,20 @@ class BottomNavBar extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [Icon(FontAwesomeIcons.house), Text("Department")],
+                children: [
+                  Icon(
+                    FontAwesomeIcons.userPlus,
+                    color: Colors.white,
+                    size: 20,
+                  ),
+                  Text(
+                    "Users",
+                    style: TextStyle(
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFFFFFFFF)),
+                  )
+                ],
               ),
             ),
           ],

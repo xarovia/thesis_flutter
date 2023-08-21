@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/BottomNavBar.dart';
 import 'package:flutter_application_1/components/ClassSchedBox.dart';
 import 'package:flutter_application_1/components/CustomSearchBar.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // ignore: library_prefixes
 
@@ -19,8 +20,20 @@ class _Screen2State extends State<ClassPage> {
         appBar: AppBar(
             centerTitle: true,
             title: const Text('Class'),
-            backgroundColor: Colors.blue),
+            backgroundColor: Color(0xFF2E3192),
+            foregroundColor: Color(0xFFFFFFFF)),
         body: ClassScreen(),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Color(0xFF3CC16B),
+          shape: CircleBorder(),
+          elevation: 4.0,
+          child: Icon(
+            FontAwesomeIcons.plus,
+            color: Colors.white,
+            size: 20,
+          ),
+          onPressed: () {},
+        ),
         bottomNavigationBar: BottomNavBar());
   }
 }
