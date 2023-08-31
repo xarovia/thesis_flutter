@@ -16,9 +16,9 @@ class _EditContentsState extends State<EditContents> {
     return Container(
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Color(0xFF2E3192),
-      ),
+          borderRadius: BorderRadius.circular(0),
+          color: Color(0xFFFFFFFF),
+          border: Border.all(color: Color(0xFF9E9FA7), width: 1)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -39,7 +39,7 @@ class _EditContentsState extends State<EditContents> {
                   fontSize: 20,
                   fontFamily: "Poppins",
                   fontWeight: FontWeight.w500,
-                  color: Color(0xFFFFFFFF),
+                  color: Color(0xFF000000),
                 ),
               ),
               Text(
@@ -47,7 +47,7 @@ class _EditContentsState extends State<EditContents> {
                 style: TextStyle(
                   fontFamily: "Poppins",
                   fontWeight: FontWeight.w500,
-                  color: Color(0xFFFFFFFF),
+                  color: Color(0xFF000000),
                 ),
               )
             ],
