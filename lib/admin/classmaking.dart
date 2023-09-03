@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
+//katong after sa classPage na main.
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/admin/SaveStudentsPage.dart';
 import 'package:flutter_application_1/components/AddingContents.dart';
 import 'package:flutter_application_1/components/BottomNavBar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -24,10 +25,10 @@ class _ClassMakingState extends State<ClassMaking> {
             padding: const EdgeInsets.only(right: 16.0),
             child: GestureDetector(
               onTap: () {
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => const ClassMaking()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SaveStudentsPage()));
               },
               child: const Text(
                 'Save',

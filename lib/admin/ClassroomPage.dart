@@ -1,13 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
+//honestly nalimtan nako ni im so quirky
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/admin/ClassroomPage.dart';
 import 'package:flutter_application_1/components/AddClassroom.dart';
-import 'package:flutter_application_1/components/AddingContents.dart';
 import 'package:flutter_application_1/components/BottomNavBar.dart';
-import 'package:flutter_application_1/components/ClassSchedBox.dart';
-import 'package:flutter_application_1/components/CustomSearchBar.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ClassroomPagers extends StatefulWidget {
   const ClassroomPagers({super.key});

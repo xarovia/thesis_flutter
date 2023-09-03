@@ -18,6 +18,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
     return AnimSearchBar(
       width: screenSize.width,
       textController: textController,
+      suffixIcon: null, // Set the suffixIcon to null to remove the icon
       onSuffixTap: () {
         setState(() {
           textController.clear();

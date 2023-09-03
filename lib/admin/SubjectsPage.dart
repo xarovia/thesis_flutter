@@ -1,20 +1,19 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-//class page na
-
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables
+//main subjects
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/BottomNavBar.dart';
 import 'package:flutter_application_1/components/CustomSearchBar.dart';
-import 'package:flutter_application_1/components/EditContents.dart';
+import 'package:flutter_application_1/components/SubjectsContent.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class EditStudents extends StatefulWidget {
-  const EditStudents({super.key});
+class SubjectPage extends StatefulWidget {
+  const SubjectPage({super.key});
 
   @override
-  State<EditStudents> createState() => _EditStudentsState();
+  State<SubjectPage> createState() => _SubjectPageState();
 }
 
-class _EditStudentsState extends State<EditStudents> {
+class _SubjectPageState extends State<SubjectPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,12 +24,12 @@ class _EditStudentsState extends State<EditStudents> {
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
             child: GestureDetector(
-              // onTap: () {
-              //   Navigator.push(
-              //       context,
-              //       MaterialPageRoute(
-              //           builder: (context) => const SaveStudentsPage()));
-              // },
+              onTap: () {
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (context) => const SaveStudentsPage()));
+              },
               child: const Text(
                 'Save',
                 style: TextStyle(
@@ -45,12 +44,12 @@ class _EditStudentsState extends State<EditStudents> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Text('Student'),
+            Text('Subjects'),
           ],
         ),
         centerTitle: true,
       ),
-      body: StudentClassScreen(),
+      body: SubjectPageScreen(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color(0xFF3CC16B),
         shape: const CircleBorder(),
@@ -69,12 +68,12 @@ class _EditStudentsState extends State<EditStudents> {
   }
 }
 
-class StudentClassScreen extends StatefulWidget {
+class SubjectPageScreen extends StatefulWidget {
   @override
   _AppState createState() => _AppState();
 }
 
-class _AppState extends State<StudentClassScreen> {
+class _AppState extends State<SubjectPageScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -84,8 +83,8 @@ class _AppState extends State<StudentClassScreen> {
           (CustomSearchBar()),
           Expanded(
             child: ListView(children: <Widget>[
-              EditContents(),
-              EditContents(),
+              SubjectContents(),
+              const SizedBox(height: 10)
             ]),
           ),
         ],

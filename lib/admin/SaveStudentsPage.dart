@@ -1,20 +1,19 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-//class page na
-
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+//katong sa classmakingpage na magsave sa class page magadd og students.
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/BottomNavBar.dart';
 import 'package:flutter_application_1/components/CustomSearchBar.dart';
 import 'package:flutter_application_1/components/EditContents.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class EditStudents extends StatefulWidget {
-  const EditStudents({super.key});
+class SaveStudentsPage extends StatefulWidget {
+  const SaveStudentsPage({super.key});
 
   @override
-  State<EditStudents> createState() => _EditStudentsState();
+  State<SaveStudentsPage> createState() => _SaveStudentsPageState();
 }
 
-class _EditStudentsState extends State<EditStudents> {
+class _SaveStudentsPageState extends State<SaveStudentsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,12 +24,12 @@ class _EditStudentsState extends State<EditStudents> {
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
             child: GestureDetector(
-              // onTap: () {
-              //   Navigator.push(
-              //       context,
-              //       MaterialPageRoute(
-              //           builder: (context) => const SaveStudentsPage()));
-              // },
+              onTap: () {
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (context) => const ClassMaking()));
+              },
               child: const Text(
                 'Save',
                 style: TextStyle(
@@ -50,7 +49,7 @@ class _EditStudentsState extends State<EditStudents> {
         ),
         centerTitle: true,
       ),
-      body: StudentClassScreen(),
+      body: SaveStudentsScreen(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color(0xFF3CC16B),
         shape: const CircleBorder(),
@@ -69,12 +68,12 @@ class _EditStudentsState extends State<EditStudents> {
   }
 }
 
-class StudentClassScreen extends StatefulWidget {
+class SaveStudentsScreen extends StatefulWidget {
   @override
   _AppState createState() => _AppState();
 }
 
-class _AppState extends State<StudentClassScreen> {
+class _AppState extends State<SaveStudentsScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
