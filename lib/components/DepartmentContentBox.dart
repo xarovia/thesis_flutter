@@ -1,12 +1,15 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/admin/EditStudents.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class ClassSchedBox extends StatelessWidget {
-  const ClassSchedBox({super.key});
+class DepartmentContents extends StatefulWidget {
+  const DepartmentContents({super.key});
 
+  @override
+  State<DepartmentContents> createState() => _DepartmentContentsState();
+}
+
+class _DepartmentContentsState extends State<DepartmentContents> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +24,7 @@ class ClassSchedBox extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "4-120",
+                "CS",
                 style: TextStyle(
                     fontSize: 20,
                     fontFamily: "Poppins",
@@ -29,7 +32,7 @@ class ClassSchedBox extends StatelessWidget {
                     color: Color(0xFFFFFFFF)),
               ),
               Text(
-                "8:20 AM - 10:50 AM",
+                "Computer Science",
                 style: TextStyle(
                     fontFamily: "Poppins",
                     fontWeight: FontWeight.w500,
@@ -37,17 +40,17 @@ class ClassSchedBox extends StatelessWidget {
               )
             ],
           ),
-          IconButton(
-              // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
-              icon: FaIcon(FontAwesomeIcons.arrowRight),
-              color: Color(0xFFFFFFFF),
-              iconSize: 15,
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const EditStudents()));
-              })
+          // IconButton(
+          //     // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
+          //     icon: FaIcon(FontAwesomeIcons.arrowRight),
+          //     color: Color(0xFFFFFFFF),
+          //     iconSize: 15,
+          //     onPressed: () {
+          //       Navigator.push(
+          //           context,
+          //           MaterialPageRoute(
+          //               builder: (context) => const EditStudents()));
+          //     })
         ],
       ),
     );

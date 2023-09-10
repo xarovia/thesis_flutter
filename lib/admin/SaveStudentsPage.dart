@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 //katong sa classmakingpage na magsave sa class page magadd og students.
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/components/AddStudentsContents.dart';
 import 'package:flutter_application_1/components/BottomNavBar.dart';
 import 'package:flutter_application_1/components/CustomSearchBar.dart';
-import 'package:flutter_application_1/components/EditContents.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SaveStudentsPage extends StatefulWidget {
@@ -44,7 +44,7 @@ class _SaveStudentsPageState extends State<SaveStudentsPage> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Text('Student'),
+            Text('Students'),
           ],
         ),
         centerTitle: true,
@@ -83,8 +83,8 @@ class _AppState extends State<SaveStudentsScreen> {
           (CustomSearchBar()),
           Expanded(
             child: ListView(children: <Widget>[
-              EditContents(),
-              EditContents(),
+              AddingStudents(),
+              AddingStudents(),
             ]),
           ),
         ],

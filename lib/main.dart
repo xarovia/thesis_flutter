@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
-import 'package:flutter_application_1/admin/classpage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/admin/DepartmentPageMain.dart';
 
 void main() {
   runApp(const MyApp());
@@ -121,12 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: const <Widget>[
-                        Text(
-                          "Forgot password?",
-                          style: TextStyle(color: Color(0xFF405C9C)),
-                        ),
-                      ],
+                      children: const <Widget>[],
                     ),
                     SizedBox(
                       height: 50,
@@ -139,7 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => ClassPage()),
+                                  builder: (context) => DepartmentScreen()),
                             )
                           },
                           style: ElevatedButton.styleFrom(

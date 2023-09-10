@@ -1,30 +1,30 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables
-//main subjects
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/admin/SubjectsMaking.dart';
+import 'package:flutter_application_1/admin/DepartmentMaking.dart';
 import 'package:flutter_application_1/components/BottomNavBar.dart';
 import 'package:flutter_application_1/components/CustomSearchBar.dart';
-import 'package:flutter_application_1/components/SubjectsContentBox.dart';
+import 'package:flutter_application_1/components/DepartmentContentBox.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class SubjectPage extends StatefulWidget {
-  const SubjectPage({super.key});
+class DepartmentScreen extends StatefulWidget {
+  const DepartmentScreen({super.key});
 
   @override
-  State<SubjectPage> createState() => _SubjectPageState();
+  State<DepartmentScreen> createState() => _DepartmentScreenState();
 }
 
-class _SubjectPageState extends State<SubjectPage> {
+class _DepartmentScreenState extends State<DepartmentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Subjects'),
+        title: const Text('Departments'),
         backgroundColor: Color(0xFF2E3192),
         foregroundColor: Color(0xFFFFFFFF),
       ),
-      body: SubjectPageScreen(),
+      body: DepartmentList(),
       floatingActionButton: FloatingActionButton(
         //floating button call
         backgroundColor: Color(0xFF3CC16B),
@@ -40,7 +40,7 @@ class _SubjectPageState extends State<SubjectPage> {
             context,
             MaterialPageRoute(
                 builder: (context) =>
-                    SubjectsMakingPage()), // Replace NewScreen with your actual screen widget
+                    DepartmentMakingScreen()), // Replace NewScreen with your actual screen widget
           );
         },
       ),
@@ -49,12 +49,14 @@ class _SubjectPageState extends State<SubjectPage> {
   }
 }
 
-class SubjectPageScreen extends StatefulWidget {
+class DepartmentList extends StatefulWidget {
+  const DepartmentList({super.key});
+
   @override
-  _AppState createState() => _AppState();
+  State<DepartmentList> createState() => _DepartmentListState();
 }
 
-class _AppState extends State<SubjectPageScreen> {
+class _DepartmentListState extends State<DepartmentList> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -64,7 +66,7 @@ class _AppState extends State<SubjectPageScreen> {
           (CustomSearchBar()),
           Expanded(
             child: ListView(children: <Widget>[
-              SubjectContents(),
+              DepartmentContents(),
               const SizedBox(height: 10)
             ]),
           ),

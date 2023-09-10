@@ -20,27 +20,6 @@ class _UsersPageState extends State<UsersPage> {
       appBar: AppBar(
         backgroundColor: Color(0xFF2E3192),
         foregroundColor: Color(0xFFFFFFFF),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 16.0),
-            child: GestureDetector(
-              onTap: () {
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => const ClassMaking()));
-              },
-              child: const Text(
-                'Save',
-                style: TextStyle(
-                  fontFamily: "Poppins",
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
-          ),
-        ],
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [

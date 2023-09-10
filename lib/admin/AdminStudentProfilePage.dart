@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/StudentProfile.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class EditStudentProfile extends StatefulWidget {
   const EditStudentProfile({super.key});
@@ -23,19 +22,6 @@ class _EditStudentProfileState extends State<EditStudentProfile> {
       ),
       body: SingleChildScrollView(
         child: StudentProfileScreen(),
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xFF3CC16B),
-        shape: CircleBorder(),
-        elevation: 4.0,
-        child: Icon(
-          FontAwesomeIcons.plus,
-          color: Colors.white,
-          size: 20,
-        ),
-        onPressed: () {
-          // Navigate to the new screen when the button is pressed
-        },
       ),
     );
   }

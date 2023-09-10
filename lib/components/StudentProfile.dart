@@ -132,10 +132,10 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
             });
           },
           child: Container(
-            width: _isEditing ? 150 : 50, // Adjust the width as needed
+            width: _isEditing ? 250 : 500, // Adjust the width as needed
             height: 50, // Adjust the height as needed
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25), // Circular background
+              borderRadius: BorderRadius.circular(5), // Circular background
               color: Colors.grey, // Grey background color
             ),
             child: _isEditing

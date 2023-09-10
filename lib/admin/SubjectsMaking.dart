@@ -1,21 +1,19 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-//class page na
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/admin/SaveStudentsPage.dart';
+import 'package:flutter_application_1/admin/UsersPage.dart';
+import 'package:flutter_application_1/components/AddingSubjectsContents.dart';
 import 'package:flutter_application_1/components/BottomNavBar.dart';
 import 'package:flutter_application_1/components/CustomSearchBar.dart';
-import 'package:flutter_application_1/components/EditContents.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class EditStudents extends StatefulWidget {
-  const EditStudents({super.key});
+class SubjectsMakingPage extends StatefulWidget {
+  const SubjectsMakingPage({super.key});
 
   @override
-  State<EditStudents> createState() => _EditStudentsState();
+  State<SubjectsMakingPage> createState() => _SubjectsMakingPageState();
 }
 
-class _EditStudentsState extends State<EditStudents> {
+class _SubjectsMakingPageState extends State<SubjectsMakingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,10 +25,8 @@ class _EditStudentsState extends State<EditStudents> {
             padding: const EdgeInsets.only(right: 16.0),
             child: GestureDetector(
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const SaveStudentsPage()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const UsersPage()));
               },
               child: const Text(
                 'Save',
@@ -46,36 +42,23 @@ class _EditStudentsState extends State<EditStudents> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Text('4-120'),
+            Text('Subjects'),
           ],
         ),
         centerTitle: true,
       ),
-      body: StudentClassScreen(),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xFF3CC16B),
-        shape: const CircleBorder(),
-        elevation: 4.0,
-        child: const Icon(
-          FontAwesomeIcons.userPlus,
-          color: Colors.white,
-          size: 20,
-        ),
-        onPressed: () {
-          // Handle FAB press
-        },
-      ),
+      body: SubjectScreen(),
       bottomNavigationBar: BottomNavBar(),
     );
   }
 }
 
-class StudentClassScreen extends StatefulWidget {
+class SubjectScreen extends StatefulWidget {
   @override
   _AppState createState() => _AppState();
 }
 
-class _AppState extends State<StudentClassScreen> {
+class _AppState extends State<SubjectScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -85,8 +68,8 @@ class _AppState extends State<StudentClassScreen> {
           (CustomSearchBar()),
           Expanded(
             child: ListView(children: <Widget>[
-              EditContents(),
-              EditContents(),
+              AddingSubjects(),
+              const SizedBox(height: 10),
             ]),
           ),
         ],

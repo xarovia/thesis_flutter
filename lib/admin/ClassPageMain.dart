@@ -20,22 +20,22 @@ class _Screen2State extends State<ClassPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Class'),
+        title: const Text('Classes'),
         backgroundColor: Color(0xFF2E3192),
         foregroundColor: Color(0xFFFFFFFF),
       ),
       body: ClassScreen(),
       floatingActionButton: FloatingActionButton(
+        //floating button call
         backgroundColor: Color(0xFF3CC16B),
         shape: CircleBorder(),
         elevation: 4.0,
         child: Icon(
-          FontAwesomeIcons.plus,
+          FontAwesomeIcons.pen,
           color: Colors.white,
           size: 20,
         ),
         onPressed: () {
-          // Navigate to the new screen when the button is pressed
           Navigator.push(
             context,
             MaterialPageRoute(

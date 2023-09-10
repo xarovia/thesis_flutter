@@ -1,6 +1,8 @@
 // ignore_for_file: sort_child_properties_last, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/admin/ClassPageMain.dart';
+import 'package:flutter_application_1/admin/DepartmentPageMain.dart';
 import 'package:flutter_application_1/admin/SubjectsPage.dart';
 import 'package:flutter_application_1/admin/UsersPage.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -22,10 +24,10 @@ class BottomNavBar extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => const ClassMaking()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const DepartmentScreen()));
               },
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -75,7 +77,10 @@ class BottomNavBar extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ClassPage()));
+              },
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -112,7 +117,7 @@ class BottomNavBar extends StatelessWidget {
                     size: 20,
                   ),
                   Text(
-                    "Users",
+                    "User",
                     style: TextStyle(
                         fontFamily: "Poppins",
                         fontWeight: FontWeight.w500,
