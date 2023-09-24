@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/admin/AddUserPage.dart';
 import 'package:flutter_application_1/components/BottomNavBar.dart';
 import 'package:flutter_application_1/components/CustomSearchBar.dart';
 import 'package:flutter_application_1/components/UserContents.dart';
@@ -39,7 +40,10 @@ class _UsersPageState extends State<UsersPage> {
           size: 20,
         ),
         onPressed: () {
-          // Handle FAB press
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddUserScreen()),
+          );
         },
       ),
       bottomNavigationBar: BottomNavBar(),

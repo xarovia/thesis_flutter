@@ -1,15 +1,15 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers
+// ignore_for_file: prefer_const_constructors, prefer_final_fields
 
 import 'package:flutter/material.dart';
 
-class StudentProfileScreen extends StatefulWidget {
-  const StudentProfileScreen({super.key});
+class CreateUserScreen extends StatefulWidget {
+  const CreateUserScreen({Key? key}) : super(key: key);
 
   @override
-  State<StudentProfileScreen> createState() => _StudentProfileScreenState();
+  State<CreateUserScreen> createState() => _CreateUserScreenState();
 }
 
-class _StudentProfileScreenState extends State<StudentProfileScreen> {
+class _CreateUserScreenState extends State<CreateUserScreen> {
   TextEditingController _firstNameController = TextEditingController();
   TextEditingController _middleNameController = TextEditingController();
   TextEditingController _lastNameController = TextEditingController();
@@ -23,7 +23,19 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
   TextEditingController _emailAddressController = TextEditingController();
   TextEditingController _contactNumberController = TextEditingController();
 
+  String _selectedRole = 'Student'; // Default role
   bool _isEditing = false;
+
+  // List of suffix choices
+  List<String> _suffixChoices = [
+    'Sr. (Senior)',
+    'Jr. (Junior)',
+    'III (the Third)',
+    'IV'
+  ];
+
+  // List of gender choices
+  List<String> _genderChoices = ['Female', 'Male'];
 
   @override
   void initState() {
@@ -32,8 +44,8 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
     _firstNameController.text = "Quiza";
     _middleNameController.text = "Cariaga";
     _lastNameController.text = "Balasa";
-    _suffixController.text = "n/a";
-    _sexController.text = "Female";
+    _suffixController.text = "Sr. (Senior)"; // Default suffix
+    _sexController.text = "Female"; // Default gender
     _birthdayController.text = "01/01/2000";
     _courseController.text = "Information Technology";
     _yearLevelController.text = "4th Year";
@@ -71,43 +83,61 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
 
           SizedBox(height: 20), // Space between the image and text
 
-          // Text or TextFormField for First Name
+          buildDropdownButton(
+              'Role', _selectedRole, ['Student', 'Admin', 'Professor']),
           buildTextField("First Name", _firstNameController),
-
-          // Text or TextFormField for Middle Name
           buildTextField("Middle Name", _middleNameController),
-
-          // Text or TextFormField for Last Name
           buildTextField("Last Name", _lastNameController),
-
-          // Text or TextFormField for Suffix
-          buildTextField("Suffix", _suffixController),
-
-          // Text or TextFormField for Sex
-          buildTextField("Sex", _sexController),
-
-          // Text or TextFormField for Birthday
+          buildDropdownButton('Suffix', _suffixController.text, _suffixChoices),
+          buildDropdownButton('Gender', _sexController.text, _genderChoices),
           buildTextField("Birthday", _birthdayController),
-
-          // Text or TextFormField for Course
           buildTextField("Course", _courseController),
-
-          // Text or TextFormField for Year Level
           buildTextField("Year Level", _yearLevelController),
-
-          // Text or TextFormField for Section
           buildTextField("Section", _sectionController),
-
-          // Text or TextFormField for Home Address
           buildTextField("Home Address", _homeAddressController),
-
-          // Text or TextFormField for Email Address
           buildTextField("Email Address", _emailAddressController),
-
-          // Text or TextFormField for Contact Number
           buildTextField("Contact Number", _contactNumberController),
         ],
       ),
+    );
+  }
+
+  Widget buildDropdownButton(
+      String label, String selectedValue, List<String> items) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 15,
+            fontFamily: "Poppins",
+            fontWeight: FontWeight.w500,
+            color: Color(0xFF3C454F),
+          ),
+        ),
+        SizedBox(height: 10),
+        DropdownButton<String>(
+          value: selectedValue,
+          onChanged: (String? newValue) {
+            setState(() {
+              if (label == 'Suffix') {
+                _suffixController.text = newValue!;
+              } else if (label == 'Gender') {
+                _sexController.text = newValue!;
+              } else if (label == 'Role') {
+                _selectedRole = newValue!;
+              }
+            });
+          },
+          items: items.map<DropdownMenuItem<String>>((String value) {
+            return DropdownMenuItem<String>(
+              value: value,
+              child: Text(value),
+            );
+          }).toList(),
+        ),
+      ],
     );
   }
 
@@ -132,8 +162,8 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
             });
           },
           child: Container(
-            width: _isEditing ? 250 : 500, // Adjust the width as needed
-            height: 50, // Adjust the height as needed
+            width: _isEditing ? 250 : 500,
+            height: 50,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5), // Circular background
               color: Colors.grey, // Grey background color
@@ -143,7 +173,7 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
                     controller: controller,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.only(left: 5.0),
-                      border: InputBorder.none, // Remove border
+                      border: InputBorder.none,
                     ),
                   )
                 : Center(

@@ -38,9 +38,7 @@ class _SubjectPageState extends State<SubjectPage> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(
-                builder: (context) =>
-                    SubjectsMakingPage()), // Replace NewScreen with your actual screen widget
+            MaterialPageRoute(builder: (context) => SubjectsMakingPage()),
           );
         },
       ),
