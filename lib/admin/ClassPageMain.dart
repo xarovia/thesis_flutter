@@ -1,20 +1,19 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
-//classpage
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/admin/ClassroomPage.dart';
+import 'package:flutter_application_1/admin/EditStudents.dart';
 import 'package:flutter_application_1/components/BottomNavBar.dart';
 import 'package:flutter_application_1/components/ClassSchedBox.dart';
 import 'package:flutter_application_1/components/CustomSearchBar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-// ignore: library_prefixes
-
 class ClassPage extends StatefulWidget {
   @override
-  _Screen2State createState() => _Screen2State();
+  _ClassPageState createState() => _ClassPageState();
 }
 
-class _Screen2State extends State<ClassPage> {
+class _ClassPageState extends State<ClassPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +25,6 @@ class _Screen2State extends State<ClassPage> {
       ),
       body: ClassScreen(),
       floatingActionButton: FloatingActionButton(
-        //floating button call
         backgroundColor: Color(0xFF3CC16B),
         shape: CircleBorder(),
         elevation: 4.0,
@@ -39,8 +37,8 @@ class _Screen2State extends State<ClassPage> {
           Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) =>
-                    ClassroomPagers()), // Replace NewScreen with your actual screen widget
+              builder: (context) => ClassroomPagers(),
+            ),
           );
         },
       ),
@@ -51,24 +49,50 @@ class _Screen2State extends State<ClassPage> {
 
 class ClassScreen extends StatefulWidget {
   @override
-  _AppState createState() => _AppState();
+  _ClassScreenState createState() => _ClassScreenState();
 }
 
-class _AppState extends State<ClassScreen> {
+class _ClassScreenState extends State<ClassScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(15),
       child: Column(
         children: [
-          (CustomSearchBar()),
+          CustomSearchBar(),
           Expanded(
-            child: ListView(children: <Widget>[
-              ClassSchedBox(),
-              const SizedBox(height: 10),
-              ClassSchedBox(),
-              const SizedBox(height: 10),
-            ]),
+            child: ListView(
+              children: <Widget>[
+                ClassSchedBox(
+                  className: "4-120",
+                  classTime: "8:20 AM - 10:50 AM",
+                  onPressed: () {
+                    // route kung asa ipush dff box
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => EditStudents(),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(height: 10),
+                ClassSchedBox(
+                  className: "4-130",
+                  classTime: "12:00 PM - 2:30 PM",
+                  onPressed: () {
+                    // route kung asa ipush dff box
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => EditStudents(),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(height: 10),
+              ],
+            ),
           ),
         ],
       ),

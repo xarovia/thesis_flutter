@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/admin/SubjectsMaking.dart';
 import 'package:flutter_application_1/components/BottomNavBar.dart';
+import 'package:flutter_application_1/components/ClassSchedBox.dart';
 import 'package:flutter_application_1/components/CustomSearchBar.dart';
-import 'package:flutter_application_1/components/SubjectsContentBox.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SubjectPage extends StatefulWidget {
@@ -55,16 +55,61 @@ class SubjectPageScreen extends StatefulWidget {
 class _AppState extends State<SubjectPageScreen> {
   @override
   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: const EdgeInsets.all(15),
+//       child: Column(
+//         children: [
+//           (CustomSearchBar()),
+//           Expanded(
+//             child: ListView(children: <Widget>[
+//               SubjectContents(),
+//               const SizedBox(height: 10)
+//             ]),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
     return Padding(
       padding: const EdgeInsets.all(15),
       child: Column(
         children: [
-          (CustomSearchBar()),
+          CustomSearchBar(),
           Expanded(
-            child: ListView(children: <Widget>[
-              SubjectContents(),
-              const SizedBox(height: 10)
-            ]),
+            child: ListView(
+              children: <Widget>[
+                ClassSchedBox(
+                  className: "IT 3357",
+                  classTime: "Capstone & Research 2",
+                  onPressed: () {
+                    // route kung asa ipush dff box
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SubjectsMakingPage(),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(height: 10),
+                ClassSchedBox(
+                  className: "4-130",
+                  classTime: "12:00 PM - 2:30 PM",
+                  onPressed: () {
+                    // route kung asa ipush dff box
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SubjectsMakingPage(),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(height: 10),
+              ],
+            ),
           ),
         ],
       ),

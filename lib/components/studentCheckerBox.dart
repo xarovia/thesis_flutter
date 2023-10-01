@@ -1,17 +1,15 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/admin/EditStudents.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class ClassSchedBox extends StatelessWidget {
+class StudentCheckBox extends StatelessWidget {
   final String className;
   final String classTime;
   final VoidCallback onPressed;
 
-  const ClassSchedBox({
+  const StudentCheckBox({
     required this.className,
-    required this.classTime,
+    required this.classTime, // Update the classTime property here
     required this.onPressed,
     Key? key,
   }) : super(key: key);
@@ -19,7 +17,7 @@ class ClassSchedBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onPressed, // Trigger the onPressed callback when the box is tapped
+      onTap: onPressed,
       child: Container(
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
@@ -43,7 +41,7 @@ class ClassSchedBox extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  classTime,
+                  classTime, // This is where the classTime is displayed
                   style: TextStyle(
                     fontFamily: "Poppins",
                     fontWeight: FontWeight.w500,
@@ -52,20 +50,15 @@ class ClassSchedBox extends StatelessWidget {
                 )
               ],
             ),
-            IconButton(
-              icon: FaIcon(FontAwesomeIcons.arrowRight),
-              color: Color(0xFFFFFFFF),
-              iconSize: 15,
-              onPressed: () {
-                // route kung asa ipush dff box
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => EditStudents(),
-                  ),
-                );
-              },
-            )
+            Text(
+              'Absent',
+              style: TextStyle(
+                fontSize: 15,
+                fontFamily: "Poppins",
+                fontWeight: FontWeight.w500,
+                color: Color(0xFFFFFFFF),
+              ),
+            ),
           ],
         ),
       ),

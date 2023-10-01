@@ -1,14 +1,12 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/admin/DepartmentMaking.dart';
 import 'package:flutter_application_1/components/BottomNavBar.dart';
+import 'package:flutter_application_1/components/ClassSchedBox.dart';
 import 'package:flutter_application_1/components/CustomSearchBar.dart';
-import 'package:flutter_application_1/components/DepartmentContentBox.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DepartmentScreen extends StatefulWidget {
-  const DepartmentScreen({super.key});
+  const DepartmentScreen({Key? key}) : super(key: key);
 
   @override
   State<DepartmentScreen> createState() => _DepartmentScreenState();
@@ -26,7 +24,6 @@ class _DepartmentScreenState extends State<DepartmentScreen> {
       ),
       body: DepartmentList(),
       floatingActionButton: FloatingActionButton(
-        //floating button call
         backgroundColor: Color(0xFF3CC16B),
         shape: CircleBorder(),
         elevation: 4.0,
@@ -39,8 +36,8 @@ class _DepartmentScreenState extends State<DepartmentScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) =>
-                    DepartmentMakingScreen()), // Replace NewScreen with your actual screen widget
+              builder: (context) => DepartmentMakingScreen(),
+            ),
           );
         },
       ),
@@ -50,7 +47,7 @@ class _DepartmentScreenState extends State<DepartmentScreen> {
 }
 
 class DepartmentList extends StatefulWidget {
-  const DepartmentList({super.key});
+  const DepartmentList({Key? key}) : super(key: key);
 
   @override
   State<DepartmentList> createState() => _DepartmentListState();
@@ -63,12 +60,25 @@ class _DepartmentListState extends State<DepartmentList> {
       padding: const EdgeInsets.all(15),
       child: Column(
         children: [
-          (CustomSearchBar()),
+          CustomSearchBar(),
           Expanded(
-            child: ListView(children: <Widget>[
-              DepartmentContents(),
-              const SizedBox(height: 10)
-            ]),
+            child: ListView(
+              children: <Widget>[
+                ClassSchedBox(
+                  className: 'CS',
+                  classTime: 'Computer Science',
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DepartmentMakingScreen(),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(height: 10),
+              ],
+            ),
           ),
         ],
       ),

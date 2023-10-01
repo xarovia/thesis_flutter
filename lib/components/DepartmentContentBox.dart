@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/admin/DepartmentMaking.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DepartmentContents extends StatefulWidget {
   const DepartmentContents({super.key});
@@ -40,17 +42,17 @@ class _DepartmentContentsState extends State<DepartmentContents> {
               )
             ],
           ),
-          // IconButton(
-          //     // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
-          //     icon: FaIcon(FontAwesomeIcons.arrowRight),
-          //     color: Color(0xFFFFFFFF),
-          //     iconSize: 15,
-          //     onPressed: () {
-          //       Navigator.push(
-          //           context,
-          //           MaterialPageRoute(
-          //               builder: (context) => const EditStudents()));
-          //     })
+          IconButton(
+              // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
+              icon: FaIcon(FontAwesomeIcons.arrowRight),
+              color: Color(0xFFFFFFFF),
+              iconSize: 15,
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const DepartmentMakingScreen()));
+              })
         ],
       ),
     );

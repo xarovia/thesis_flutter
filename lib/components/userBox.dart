@@ -1,20 +1,21 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/admin/EditStudents.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class ClassSchedBox extends StatelessWidget {
-  final String className;
-  final String classTime;
-  final VoidCallback onPressed;
+class UserBoxes extends StatefulWidget {
+  const UserBoxes({Key? key});
 
-  const ClassSchedBox({
-    required this.className,
-    required this.classTime,
-    required this.onPressed,
-    Key? key,
-  }) : super(key: key);
+  @override
+  State<UserBoxes> createState() => _UserBoxesState();
+}
+
+class _UserBoxesState extends State<UserBoxes> {
+  // Define an empty onPressed callback
+  void onPressed() {
+    // Implement your logic here
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class ClassSchedBox extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  className,
+                  "Create Admin", // Fixed the string
                   style: TextStyle(
                     fontSize: 20,
                     fontFamily: "Poppins",
@@ -42,14 +43,6 @@ class ClassSchedBox extends StatelessWidget {
                     color: Color(0xFFFFFFFF),
                   ),
                 ),
-                Text(
-                  classTime,
-                  style: TextStyle(
-                    fontFamily: "Poppins",
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFFFFFFFF),
-                  ),
-                )
               ],
             ),
             IconButton(
@@ -57,7 +50,7 @@ class ClassSchedBox extends StatelessWidget {
               color: Color(0xFFFFFFFF),
               iconSize: 15,
               onPressed: () {
-                // route kung asa ipush dff box
+                // Route to where you want to navigate
                 Navigator.push(
                   context,
                   MaterialPageRoute(
